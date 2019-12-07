@@ -13,28 +13,15 @@ namespace BankAccount
             //upcasting
 
             Account acc1 = bacc;
-            Account acc2 = new BusinessAccount(1003, "Bob", 0.0, 200.0);
-            Account acc3 = new SavingsAccount(1004, "Mike", 310.0, 0.08);
+            Account acc2 = new Account(1003, "Bob", 500.0);
+            Account acc3 = new SavingsAccount(1004, "Mike", 500.0, 0.08);
 
-            //Downcasting
+            acc2.Withdraw(5.00);
+            acc3.Withdraw(5.00);
 
-            BusinessAccount acc4 = (BusinessAccount)acc2;
+            Console.WriteLine(acc2.Balance);
+            Console.WriteLine(acc3.Balance);
 
-            acc4.Loan(100.0);
-
-            //BusinessAccount acc5 = (BusinessAccount)acc3;
-
-            if (acc3 is BusinessAccount)
-            {
-                BusinessAccount acc5 = (BusinessAccount)acc3;
-            }
-
-            if (acc3 is SavingsAccount)
-            {
-                SavingsAccount acc5 = (SavingsAccount)acc3;
-                acc5.UpdateBalance();
-                Console.WriteLine("Update!");
-            }
 
         }
     }
